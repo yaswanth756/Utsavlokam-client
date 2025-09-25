@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Add these animations to your CSS file */
+@keyframes slide-up {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.3s ease-out;
+  }
+  
+  /* Improved touch targets for mobile */
+  @media (max-width: 768px) {
+    button {
+      min-height: 44px; /* Apple's recommended minimum touch target */
+    }
+  }
+  
+
+  /* Hide scrollbar but keep scroll functionality */
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-none {
+    -ms-overflow-style: none;  /* IE/Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+
+  * Also add this for body level scrollbar hiding */
+.hide-body-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-body-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+  
+/* Add once in a global CSS (e.g., index.css) */
+@keyframes shimmer {
+  0% { transform: translateX(-60%); }
+  100% { transform: translateX(120%); }
+}
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-60%);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+  animation: shimmer 1.8s ease-in-out infinite;
+  mix-blend-mode: overlay;
+}
+
+
+  /* Add this in your CSS file */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.animate-fadeIn { animation: fadeIn 0.3s ease-out; }
+.animate-slideUp { animation: slideUp 0.3s ease-out; }
+
+html, body {
+  overflow-x: clip;
+  width: 100%;
+}
