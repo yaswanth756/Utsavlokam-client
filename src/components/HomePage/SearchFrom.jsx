@@ -138,7 +138,7 @@ const SearchForm = () => {
       autoComplete="off"
     />
 
-    {/* Loader container with fixed size */}
+    {/* Loader container with fixed size - removed spinner */}
     <div className="w-5 h-5 ml-2 flex items-center justify-center">
       {loadingLocation && (
         <svg
